@@ -146,20 +146,7 @@ padding: 0;
 }
 /*首页*/
 
-.homeimg{
-    margin-left: 50px;
-    padding-top:50px;
-    width: 650px;
-    margin-left: 50px;
-    height: 430px;
-    float: left;
-}
 
-.homeimg img{
-    width: 550px;
-    height: 430px;
-    float: left;
-}
 .hometask{
     margin-top:50px;
     width: 450px;
@@ -195,22 +182,21 @@ padding: 0;
 }
 
 /*组件 QuestionList*/
-.questionList{
-    clear: both;
-    width: 1200px;
-    height: 1200px;
-    margin: auto;
-    margin-top:20px; 
-}
-
-.queimg img{
+.queimg{
     width: 238px;
-    height: 250px;
     margin-top:50px;
     margin-left: 50px;
-    border-radius: 5%;
     float: left;
+		border:2px solid white;
+    transition: all 1s; 
+		background-color: white; 	
 }
+.queimg img:hover{
+	  cursor: pointer;  
+		transform: scale(1.03);  
+}
+
+
 .quetip{
     width: 1100px;
     height: 80px;
