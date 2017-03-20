@@ -23,7 +23,7 @@ export default class Header extends Component {
 					<Col span={2}></Col>
 					<Col span={3} >
 						<div className="headerlogo">
-							<p className="headertitle">来投票</p>
+							<p className="headertitle">问卷调查</p>
 						</div>
 					</Col>
 					<Col span={14}>
