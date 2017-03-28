@@ -90,24 +90,19 @@ class Up extends Component {
 				key: 'one'
 			},
 			{
-				title: '选项2',
+				title: '选项二',
 				dataIndex: 'two',
 				key: 'two'
 			},
 			{
-				title: '选项3',
+				title: '选项三',
 				dataIndex: 'three',
 				key: 'three'
 			},
 			{
-				title: '选项4',
+				title: '选项四',
 				dataIndex: 'four',
 				key: 'four'
-			},
-			{
-				title: '正确答案',
-				dataIndex: 'right',
-				key: 'right'
 			},
 			{
 				title: '操作',
@@ -209,30 +204,30 @@ class Up extends Component {
 const data = [
 	{
 		id: 1,
-		subtitle: '我是第一道题',
-		one: '答案1',
-		two: '答案2',
-		three: '答案3',
-		four: '答案4',
-		right: 'one'
+		subtitle: '你是？',
+		one: '你是男生？',
+		two: '你是女生？',
+		three: '大学生？',
+		four: '实习生？',
+
 	},
 	{
 		id: 2,
-		subtitle: '我是第二道题',
-		one: '答案1',
-		two: '答案2',
-		three: '答案3',
-		four: '答案4',
-		right: 'one'
+		subtitle: '手机品牌',
+		one: '苹果',
+		two: '魅族',
+		three: '小米',
+		four: '华为',
+
 	},
 	{
 		id: 3,
-		subtitle: '我是三道题',
-		one: '答案1',
-		two: '答案2',
-		three: '答案3',
-		four: '答案4',
-		right: 'one'
+		subtitle: '单身？',
+		one: '单身',
+		two: '单身狗',
+		three: '非单身',
+		four: '狗',
+
 	},
 ]
 
@@ -279,13 +274,7 @@ const inputConfig = [
 		type: 'text',
 		message: '请输入内容'
 	},
-	{
-		label: '正确答案',
-		key: 'right',
-		isAble: true,
-		type: 'text',
-		message: '请输入内容'
-	},
+
 ]
 
 

@@ -89,7 +89,7 @@ class List extends Component {
 			<div>
 				<div className="box">
 					<div style={{ width: '1200px', height: '50px' }}></div>
-					<Tabs defaultActiveKey="2">
+					<Tabs defaultActiveKey="1">
 						<TabPane tab="目录视图" key="1"><QuestionList /></TabPane>
 						<TabPane tab="摘要视图" key="2"><DetailView /></TabPane>
 					</Tabs>
