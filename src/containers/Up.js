@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Input, Button, Popconfirm, } from 'antd'
+import { Row, Col, Input, Button, Popconfirm, Modal } from 'antd'
 import Photo from '../components/Photo'
 
 import { InnerForm } from '../components/InnerForm'
@@ -13,6 +13,7 @@ class Up extends Component {
 		super(props)
 		this.state = {
 			data: '',
+			upConfirm: false,
 			modalVisible: false,
 			//存放单条数据
 			editObj: null,
@@ -76,8 +77,19 @@ class Up extends Component {
 		}
 	}
 
+	confirm = () => {
+		this.setState({
+			upConfirm: true
+		})
+	}
 
-	adviceTable = () => {
+	closeModal = () => {
+		this.setState({
+			upConfirm: false
+		})
+	}
+
+	upTable = () => {
 		const columns = [
 			{
 				title: '题目',
@@ -183,7 +195,7 @@ class Up extends Component {
 
 							<Row style={{ marginTop: 16 }}>
 								{
-									<this.adviceTable />
+									<this.upTable />
 								}
 							</Row>
 						</div>
@@ -192,8 +204,27 @@ class Up extends Component {
 						<br />
 						<Row>
 							<Col span={20}></Col>
-							<Col span={3}>	<Button type='primary' >	确认上传</Button></Col>
+							<Col span={3}>	<Button type='primary' onClick={() => this.confirm()}>	确认上传</Button></Col>
 						</Row>
+
+
+						<Modal
+							padding={0}
+							//footer为false 弹框下的取消确定按钮没有
+							footer={false}
+							visible={this.state.upConfirm}
+							closable={true}
+							onCancel={this.closeModal}
+							width='450px'
+							style={{ top: '300px' }}
+						>
+
+							<p>上传成功！</p>
+
+
+						</Modal>
+
+
 					</div>
 				</div>
 			</div>

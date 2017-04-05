@@ -8,6 +8,7 @@ import Login from './containers/Login'
 import List from './containers/List'
 import Up from './containers/Up'
 import New from './containers/NewPerson'
+import Detail from './containers/Detail'
 
 
 ReactDOM.render((
@@ -18,6 +19,7 @@ ReactDOM.render((
 			<Route path='/List' name='List' component={List} />
 			<Route path='/Up' name='Up' component={Up} />
 			<Route path='/New' name='New' component={New} />
+			<Route path='/Detail/:ID' name='Detail' component={Detail} />
 		</Route>
 	</Router>
 ), document.getElementById('root'));
