@@ -27,7 +27,7 @@ class QuestionList extends Component {
 								return (
 
 									<div className="queimg" >
-										<Link to={`/Detail/${e.id}`}>
+										<Link to={`/Detail/${e.id}`} >
 											<div style={{
 												width: '234px',
 												height: '250px',
@@ -52,33 +52,33 @@ class QuestionList extends Component {
 
 											</div>
 
-
-											<Row style={{ margin: '5px' }}>
-												<Col span={2}></Col>
-												{/*填问卷数量，点赞数量*/}
-												<Col span={5}>	<div><Icon type="edit" />&nbsp;&nbsp;34</div></Col>
-												<Col span={5}>	<div><Icon type="like" />&nbsp;&nbsp;34</div></Col>
-											</Row>
-
-
-											<Row style=
-												{{
-													width: '234px', height: '50px', borderTop: '1px',
-													backgroundColor: 'rgba(43,43,43,0.05)',
-												}}>
-												<div style={{ height: '10px' }}></div>
-												<Col span={2}></Col>
-												{/*用户头像*/}
-												<Col span={5}>
-													<img src={e.img} style={{ width: '30px', height: '32px', borderRadius: '2px' }} />
-												</Col>
-												{/*用户名，问卷名*/}
-												<Col span={17}>
-													<p style={{ fontSize: '12', fontWeight: 'blod', color: 'grey' }}>{e.author}</p>
-													<p>{e.name}</p>
-												</Col>
-											</Row>
 										</Link>
+										<Row style={{ margin: '5px' }}>
+											<Col span={2}></Col>
+											{/*填问卷数量，点赞数量*/}
+											<Col span={5}>	<div><Icon type="edit" />&nbsp;&nbsp;34</div></Col>
+											<Col span={5}>	<div><Icon type="like" />&nbsp;&nbsp;34</div></Col>
+										</Row>
+
+
+										<Row style=
+											{{
+												width: '234px', height: '50px', borderTop: '1px',
+												backgroundColor: 'rgba(43,43,43,0.05)',
+											}}>
+											<div style={{ height: '10px' }}></div>
+											<Col span={2}></Col>
+											{/*用户头像*/}
+											<Col span={5}>
+												<img src={e.img} style={{ width: '30px', height: '32px', borderRadius: '2px' }} />
+											</Col>
+											{/*用户名，问卷名*/}
+											<Col span={17}>
+												<p style={{ fontSize: '12', fontWeight: 'blod', color: 'grey' }}>{e.author}</p>
+												<p>{e.name}</p>
+											</Col>
+										</Row>
+
 									</div>
 								)
 							})
