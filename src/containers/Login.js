@@ -21,7 +21,7 @@ const LoginForm = Form.create()(React.createClass({
 			<Form
 				onSubmit={this.handleLoginSubmit}
 				className="login-form" style={{ marginTop: '100px;' }}
-				>
+			>
 				<FormItem hasFeedback>
 					{getFieldDecorator('email', {
 						rules: [{
@@ -85,7 +85,7 @@ const RegisterForm = Form.create()(React.createClass({
 						<Input
 							addonBefore={<Icon type="user" />}
 							placeholder="请输入您的用户名"
-							/>
+						/>
 						)}
 				</FormItem>
 
@@ -103,7 +103,7 @@ const RegisterForm = Form.create()(React.createClass({
 							addonBefore={<Icon type="mail" />}
 							type="Email"
 							placeholder="请输入您的邮箱"
-							/>
+						/>
 						)}
 				</FormItem>
 
@@ -115,7 +115,7 @@ const RegisterForm = Form.create()(React.createClass({
 							addonBefore={<Icon type="lock" />}
 							type="password"
 							placeholder="请输入您的密码"
-							/>
+						/>
 						)}
 				</FormItem>
 				<FormItem wrapperCol={{ span: 5, offset: 0 }}>
@@ -132,16 +132,19 @@ class Login extends Component {
 	render() {
 		return (
 			<div>
-				<div className="box" style={{paddingTop:'80px'}}>
+				<div className="box" style={{ paddingTop: '80px' }}>
 					<div className="loginleft"><img src={require("../image/1.jpeg")} /></div>
 					<div className="loginright">
 						<div className="loginlogo"><img src={require("../image/8.jpeg")} /></div>
 						<div className="loginrightform">
 							<TabsUnderline>
-								<div name="登录">
-									<div style={{ weight: '327px', height: '24px' }}></div>
-									<LoginForm />
-								</div>
+								<Link to={'/PersonCenter'}>
+									<div name="登录">
+										<div style={{ weight: '327px', height: '24px' }}></div>
+										<LoginForm />
+									</div>
+								</Link>
+
 								<div name="注册">
 									<div style={{ weight: '327px', height: '24px' }}></div>
 									<RegisterForm />
