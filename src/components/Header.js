@@ -17,7 +17,7 @@ export default class Header extends Component {
 
 	render() {
 		return (
-			
+
 			<div>
 				<Row className="headerbox">
 					<Col span={2}></Col>
@@ -31,7 +31,7 @@ export default class Header extends Component {
 							{
 								menus.map((e, i) => {
 									return (
-										<Link className="nav" to={e.link}>{e.name}</Link>		
+										<Link className="nav" to={e.link} style={{ textDecoration: 'none' }}>{e.name}</Link>
 									)
 								})
 							}
@@ -39,7 +39,7 @@ export default class Header extends Component {
 					</Col>
 
 					<Col span={3}>
-						<Link to="/Login" className="headersign">登录 注册</Link>
+						<Link to="/Login" className="headersign" style={{ textDecoration: 'none' }}>登录 注册</Link>
 					</Col>
 					<Col span={2} ></Col>
 				</Row>
