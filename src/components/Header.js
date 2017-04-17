@@ -40,6 +40,11 @@ export default class Header extends Component {
 
 					<Col span={3}>
 						<Link to="/Login" className="headersign" style={{ textDecoration: 'none' }}>登录 注册</Link>
+
+						{/*
+                appInfo.app.accessToken === "" ? <Link to="/Login" className="headlink" style={{ textDecoration: 'none' }}>登录注册</Link> :
+                  <Link to="/PersonalCenter" className="headlink" style={{ textDecoration: 'none' }}>个人中心</Link>
+              */}
 					</Col>
 					<Col span={2} ></Col>
 				</Row>

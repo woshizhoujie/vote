@@ -53,9 +53,11 @@ const LoginForm = Form.create()(React.createClass({
 					<p className="logintip">新用户请点注册创建新账号</p>
 				</FormItem>
 				<FormItem wrapperCol={{ span: 5, offset: 0 }}>
-					<Button type="primary" htmlType="submit" style={{ width: '336px', backgroundColor: 'white', color: '#169bd5', marginBottom: '48px' }}>
-						登录
+					<Link to={'/PersonCenter'}>
+						<Button type="primary" htmlType="submit" style={{ width: '336px', backgroundColor: 'white', color: '#169bd5', marginBottom: '48px' }}>
+							登录
           </Button>
+					</Link>
 				</FormItem>
 			</Form>
 		)
@@ -137,18 +139,22 @@ class Login extends Component {
 					<div className="loginright">
 						<div className="loginlogo"><img src={require("../image/8.jpeg")} /></div>
 						<div className="loginrightform">
+
+
+
 							<TabsUnderline>
-								<Link to={'/PersonCenter'}>
-									<div name="登录">
-										<div style={{ weight: '327px', height: '24px' }}></div>
-										<LoginForm />
-									</div>
-								</Link>
+
+								<div name="登录">
+									<div style={{ weight: '327px', height: '24px' }}></div>
+									<LoginForm />
+								</div>
+
 
 								<div name="注册">
 									<div style={{ weight: '327px', height: '24px' }}></div>
 									<RegisterForm />
 								</div>
+
 							</TabsUnderline>
 						</div>
 					</div>

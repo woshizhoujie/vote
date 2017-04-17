@@ -209,3 +209,110 @@ padding: 0;
     margin: auto;
 }
 
+
+
+/*个人中心样式修饰*/
+.perbox{
+  position:absolute;
+  top:130px;
+  left:245px;
+}
+.perboxleft img{
+  width:94px;
+  height:94px;
+  border:5px solid rgba(255, 255, 255, 0.3);
+  border-radius:50%;
+}
+.perboxleft {
+	margin-left: 50px;
+  width:97px;
+  height:97px;
+  float:left;
+}
+.perboxright{
+  width:86px;
+  height:97px;
+  float:left;
+  margin-left:10px;
+  color:#FFF;
+  font-size: 14px;
+  text-align: center;
+}
+.perboxright div{
+  width:90px;
+  height:25px;
+  line-height: 25px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+	background-color: palegoldenrod
+}
+
+
+.perboxright div:hover{
+  background: palegoldenrod;
+  color:#169bd5;  
+}
+.perul{
+  width:334px;
+  margin:20px auto;
+}
+
+/*加载组件*/
+.example {
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 30px 50px;
+  margin: 100px 0;
+  height:400px;
+}
+/*选择城市*/
+
+.selectStyle{
+    color:#169bd5;
+    font-weight: 800;
+    border:1px solid #169bd5;
+    border-radius: 10px;
+}
+
+.shover span:hover{
+    color:#169bd5;
+    font-weight: 800;
+    border:1px solid #169bd5;
+    border-radius: 10px;
+}
+
+/*tab组件内容的居中*/
+/*.pmycenter{
+    width:1200px;
+    position:absolute;
+    
+}
+
+.mycenter{
+    width:1200px;
+    position:absolute;
+    left:0px;
+    top:80px;
+}*/
+
+.pcenter{
+    width:1200px;
+    height:436px;
+    margin:auto;
+    margin-top: 82px;
+    background:#f9f9f9;
+}
+.mycenter{
+    width:1200px;
+}
+
+.tabli{
+    border-top: 1px solid #C4C4C4 ;
+    padding: 20px 0 0;
+    min-height: 600px;
+}
+
+
+
