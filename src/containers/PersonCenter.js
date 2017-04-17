@@ -35,10 +35,7 @@ class ListBanner extends Component {
 
 				<div style={{ height: '40px', background: 'rgba(0,0,0,0.2)' }} >
 					<div style={{ width: '1190px', margin: 'auto', lineHeight: '40px', fontSize: '12px', color: 'white' }}  >
-						{/*category.name === '个人中心' || category.name === '搜索' ?
-							<p>当前位置：首页>{category.name}</p>
-							: <p>当前位置：首页>全部信息>{category.name}</p>
-						*/}
+						<p>当前位置：个人中心</p>
 					</div>
 				</div>
 			</div>
@@ -111,7 +108,7 @@ class PersonCenter extends Component {
 							<div name="我的发布">
 								<MyCategory name="release" />
 							</div>
-							<div name="我的收藏">
+							<div name="我参与的">
 								<MyCategory name="collection" />
 							</div>
 							<div name="修改密码" style={{ width: "1200px", height: "808px" }}>
