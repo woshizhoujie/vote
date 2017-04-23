@@ -10,6 +10,7 @@ import 'antd/dist/antd.css'
 import { ModifyPassword } from '../components/ModifyPassword'
 import MyCategory from '../components/MyCategory'
 import { appService, appInfo } from '../service'
+import QuestionList from '../components/QuestionList'
 
 
 
@@ -21,7 +22,7 @@ class ListBanner extends Component {
 		return (
 			<div className='backimg' style={{
 				width: '100%', height: '240px',
-				overflow: 'hidden', backgroundImage: "url(' http://img.hb.aicdn.com/9550a02f108c435f3e69731d65d884cd53379a0b23c94-ZBwXcb_fw658 ')",
+				overflow: 'hidden', backgroundImage: `url(${require("../image/green1.jpg")})`,
 				backgroundSize: 'cover', backgroundPosition: 'center,center',
 			}}>
 
@@ -103,28 +104,36 @@ class PersonCenter extends Component {
 				<ListBanner category={subMenus[4]} logo={content} />
 
 				<div>
-					<div style={{ width: '1200px', margin: '20px auto' }} >
-						<TabsUnderline name="personalCenter" center={true}     >
+					<div style={{ width: '1200px', marginTop: '20px', }} >
+
+						<TabsUnderline name="personalCenter" center={true}  >
+
 							<div name="我的发布">
-								<MyCategory name="release" />
+								<QuestionList />
 							</div>
+
 							<div name="我参与的">
-								<MyCategory name="collection" />
+								<QuestionList />
 							</div>
-							<div name="修改密码" style={{ width: "1200px", height: "808px" }}>
-								<div className="pcenter">
-									<div className="loginleft"> <img src={require("../image/2.jpeg")} /></div>
-									<div className="loginright">
-										<div className="loginlogo"><img src={require("../image/3.jpeg")} /></div>
-										<div className="loginrightform">
-											<div>
-												<br />
-												<ModifyPassword />
-											</div>
-										</div>
+
+							<div name="编辑个人资料" style={{ width: "1200px", height: "808px" }}>
+								<div className="loginrightform">
+									<div>
+										<br />
+										<ModifyPassword />
 									</div>
 								</div>
 							</div>
+
+							<div name="修改密码" style={{ width: "1200px", height: "808px" }}>
+								<div className="loginrightform">
+									<div>
+										<br />
+										<ModifyPassword />
+									</div>
+								</div>
+							</div>
+
 						</TabsUnderline>
 					</div>
 				</div>

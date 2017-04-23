@@ -12,15 +12,6 @@ class QuestionList extends Component {
 		return (
 			<div>
 				<div style={{ width: '1200px', height: '1200px', margin: 'auto', marginTop: '10px' }}>
-					{
-						this.props.line ?
-							<div>
-								<div className="quetip"></div>
-								<div style={{ width: '1100px', height: '10px', margin: 'auto' }}><p>hotquestion</p></div>
-							</div>
-							: null
-					}
-
 					<div >
 						{
 							QuestionListCategory.map((e, i) => {

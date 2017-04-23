@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import { StyleSheet,css} from 'aphrodite';
-import { Button,Row, Col,Tabs,RadioGroup,Radio} from 'antd';
+import React, { Component } from 'react';
+import { StyleSheet, css } from 'aphrodite';
+import { Button, Row, Col, Tabs, RadioGroup, Radio } from 'antd';
 //import '../assets/font-awesome-4.7.0/css/font-awesome.min.css'
 
 class TabsUnderline extends Component {
@@ -13,35 +13,37 @@ class TabsUnderline extends Component {
 	}
 	static defaultProps = {
 		Tab_tittle_style: {
-		//	':hover': {border:'1px solid blue',},
+			//	':hover': {border:'1px solid blue',},
 			width: '170px',
-			height: '18px',
+			height: '20px',
 			textAlign: 'center',
 			color: '#fff',
-			background:'#ccc',
-		  //borderBottom: '3px solid rgba(0,0,0,0)',
+			background: '#ccc',
+			//borderBottom: '3px solid rgba(0,0,0,0)',
 			display: 'inline-block',
 			fontSize: '12px',
+			cursor: 'pointer'
 		},
 
 		Tab_tittle_active_style: {
 			width: '170px',
-			height: '18px',
+			height: '20px',
 			textAlign: 'center',
 			color: '#fff',
-			background:'#09c',
+			background: '#09c',
 			//borderBottom: '3px solid ',
 			//borderBottomColor: '#09c',
 			display: 'inline-block',
 			fontSize: '12px',
 			//border:'1px solid #f2f2f2',
+			cursor: 'pointer'
 		},
 
 	}
 
 	render() {
 
-		const {hover, width, height, Tab_tittle_style, Tab_tittle_active_style, } = this.props
+		const { hover, width, height, Tab_tittle_style, Tab_tittle_active_style, } = this.props
 		// console.log('height:',height)
 
 		if (height, width !== undefined) {
@@ -76,7 +78,7 @@ class TabsUnderline extends Component {
 					{React.Children.map(this.props.children, (element, index) => {
 						return (
 							/*箭头函数没有自己的this，这里的this继承自外围作用域，即组件本身*/
-							<div onClick={() => { this.setState({ currentIndex: index }) } }
+							<div onClick={() => { this.setState({ currentIndex: index }) }}
 								className={index === this.state.currentIndex ? css(TabStyles.Tab_tittle_active) : css(TabStyles.Tab_tittle)}>
 								{element.props.name}
 							</div>
@@ -98,4 +100,4 @@ class TabsUnderline extends Component {
 	}
 }
 
-export {TabsUnderline}
+export { TabsUnderline }
