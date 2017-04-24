@@ -86,14 +86,7 @@ padding: 0;
     margin-left:170px; 
     padding-top:20px; 
 }
-.loginrightform{
-    width: 340px;
-    height: 290px;
-    margin: auto;
-    margin-left: 50px;
-    margin-top:120px; 
-    position: relative;
-}
+
 .formbox{
     width: 340px;
     margin: auto;
@@ -124,12 +117,7 @@ padding: 0;
     height:40px;
     margin-top: 10px;
 }
-.logintip{
-    margin-top:20px; 
-    text-align: center;
-    color: grey;
-    font-size: 14px;
-}
+
 .signin{
     width:340px;
     height: 40px;
@@ -143,6 +131,20 @@ padding: 0;
     font-size: 14px;
     position: absolute;
     bottom: 40px;
+}
+
+.loginFont{
+	font-size: 25px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: dimgrey;
+	cursor:pointer
+}
+
+.loginFontAfter{
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: palegoldenrod;
+	cursor:pointer
 }
 /*首页*/
 

@@ -22,7 +22,6 @@ ReactDOM.render((
 			<Route path='/NewPerson' name='NewPerson' component={NewPerson} />
 			<Route path='/Detail/:ID' name='Detail' component={Detail} />
 			<Route path='/PersonCenter' name='PersonCenter' component={PersonCenter} />
-
 		</Route>
 	</Router>
 ), document.getElementById('root'));

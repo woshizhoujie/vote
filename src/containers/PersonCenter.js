@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 // import ListBanner from '../components/ListBanner'
-import { subMenus } from '../data/Definition'
 import { Link } from 'react-router'
 import { browserHistory } from 'react-router'
 import { TabsUnderline } from '../components/Table'
@@ -11,9 +10,6 @@ import { ModifyPassword } from '../components/ModifyPassword'
 import MyCategory from '../components/MyCategory'
 import { appService, appInfo } from '../service'
 import QuestionList from '../components/QuestionList'
-
-
-
 
 class ListBanner extends Component {
 	render() {
@@ -34,11 +30,11 @@ class ListBanner extends Component {
 				> {text}{logo}
 				</div>
 
-				<div style={{ height: '40px', background: 'rgba(0,0,0,0.2)' }} >
+				{	/*<div style={{ height: '40px', background: 'rgba(0,0,0,0.2)' }} >
 					<div style={{ width: '1190px', margin: 'auto', lineHeight: '40px', fontSize: '12px', color: 'white' }}  >
 						<p>当前位置：个人中心</p>
 					</div>
-				</div>
+				</div>*/}
 			</div>
 
 
@@ -47,39 +43,13 @@ class ListBanner extends Component {
 }
 
 class PersonCenter extends Component {
-
 	constructor(props) {
 		super(props)
-		this.state = {
-			visible: false,
-		}
 
-		this.showModal = this.showModal.bind(this)
-		this.send = this.send.bind(this)
-		this.cancelSend = this.cancelSend.bind(this)
-		this.logout = this.logout.bind(this)
 	}
 
 
-	showModal() {
-		this.setState({
-			visible: true
-		})
-	}
-
-	send() {
-		this.setState({
-			visible: false
-		})
-	}
-
-	cancelSend() {
-		this.setState({
-			visible: false
-		})
-	}
-
-	logout() {
+	logout = () => {
 		appService.request(appInfo.address.logout, null, true, 'POST', false)
 			.then(response => {
 				appInfo.app.accessToken = ""
@@ -101,7 +71,7 @@ class PersonCenter extends Component {
 
 		return (
 			<div className='box'>
-				<ListBanner category={subMenus[4]} logo={content} />
+				<ListBanner logo={content} />
 
 				<div>
 					<div style={{ width: '1200px', marginTop: '20px', }} >
@@ -117,7 +87,7 @@ class PersonCenter extends Component {
 							</div>
 
 							<div name="编辑个人资料" style={{ width: "1200px", height: "808px" }}>
-								<div className="loginrightform">
+								<div style={{ width: '340px', height: '300px', marginTop: '20px', marginLeft: '100px' }}>
 									<div>
 										<br />
 										<ModifyPassword />
@@ -126,7 +96,7 @@ class PersonCenter extends Component {
 							</div>
 
 							<div name="修改密码" style={{ width: "1200px", height: "808px" }}>
-								<div className="loginrightform">
+								<div style={{ width: '340px', height: '300px', marginTop: '20px', marginLeft: '100px' }}>
 									<div>
 										<br />
 										<ModifyPassword />

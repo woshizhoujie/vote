@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import { TabsUnderline } from '../components/Table'
 import { Link } from 'react-router'
-import { Form, Icon, Input, Button, Checkbox } from 'antd'
+import { Form, Icon, Input, Button, Checkbox, Row, Col } from 'antd'
 
 const FormItem = Form.Item;
 
+
+//登录--------------------------------------------------------------------------------
 const LoginForm = Form.create()(React.createClass({
 	handleLoginSubmit(e) {
+		console.log('上一次的数据%o', e)
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
@@ -18,53 +21,41 @@ const LoginForm = Form.create()(React.createClass({
 	render() {
 		const { getFieldDecorator } = this.props.form;
 		return (
-			<Form
-				onSubmit={this.handleLoginSubmit}
-				className="login-form" style={{ marginTop: '100px;' }}
-			>
+			<Form onSubmit={this.handleLoginSubmit} className="login-form" style={{ marginTop: '100px;' }}>
+
 				<FormItem hasFeedback>
 					{getFieldDecorator('email', {
-						rules: [{
-							type: 'email', message: '输入的邮箱格式不正确',
-						}, {
-							required: true, message: '请输入您的邮箱',
-						}],
-					})(
-						<Input
-							name='email'
-							addonBefore={<Icon type="mail" />}
-							type="Email"
-							placeholder="请输入您的邮箱" />
-						)}
-				</FormItem>
-				<FormItem>
-					{getFieldDecorator('password', {
-						rules: [{ required: true, message: '请输入您的密码' }],
-					})(
-						<Input
-							name='password'
-							addonBefore={<Icon type="lock" />}
-							type="password"
-							placeholder="请输入您的密码" />
-						)}
+						rules: [{ type: 'email', message: '邮箱格式不正确', }, { required: true, message: '请输入您的邮箱' }],
+					})
+						(<Input name='email' addonBefore={<Icon type="mail" />} type="Email" placeholder="请输入您的邮箱" />)}
 				</FormItem>
 
 				<FormItem>
-					<p className="logintip">新用户请点注册创建新账号</p>
+					{getFieldDecorator('password', { rules: [{ required: true, message: '请输入您的密码' }], })
+						(<Input name='password' addonBefore={<Icon type="lock" />} type="password" placeholder="请输入您的密码" />)}
 				</FormItem>
+
+				<FormItem >
+					<p style={{ textAlign: 'center', color: 'grey', fontSize: '14px' }}>新用户请点注册创建新账号</p>
+				</FormItem>
+
 				<FormItem wrapperCol={{ span: 5, offset: 0 }}>
 					<Link to={'/PersonCenter'}>
-						<Button type="primary" htmlType="submit" style={{ width: '336px', backgroundColor: 'white', color: '#169bd5', marginBottom: '48px' }}>
+						<Button type="primary" htmlType="submit"
+							style={{ width: '336px', backgroundColor: 'white', color: '#169bd5', marginBottom: '48px' }}>
 							登录
-          </Button>
+            </Button>
 					</Link>
 				</FormItem>
+
 			</Form>
 		)
 	}
-
 }))
+//-----------------------------------------------------------------------------------------------
 
+
+//注册-----------------------------------------------------------------------------------------------
 const RegisterForm = Form.create()(React.createClass({
 	handleSubmit(e) {
 		e.preventDefault();
@@ -78,50 +69,26 @@ const RegisterForm = Form.create()(React.createClass({
 		const { getFieldDecorator } = this.props.form;
 		return (
 			<Form onSubmit={this.handleSubmit} className="login-form">
-				<FormItem hasFeedback>
-					{getFieldDecorator('userName', {
-						rules: [{
-							required: true, message: '请输入您的用户名!'
-						}],
-					})(
-						<Input
-							addonBefore={<Icon type="user" />}
-							placeholder="请输入您的用户名"
-						/>
-						)}
-				</FormItem>
-
-
 
 				<FormItem hasFeedback>
 					{getFieldDecorator('email', {
-						rules: [{
-							type: 'email', message: '邮箱格式不正确!',
-						}, {
-							required: true, message: '请输入您的邮箱!',
-						}],
-					})(
-						<Input
-							addonBefore={<Icon type="mail" />}
-							type="Email"
-							placeholder="请输入您的邮箱"
-						/>
-						)}
+						rules: [{ type: 'email', message: '邮箱格式不正确!', }, { required: true, message: '请输入您的邮箱!' }]
+					})(<Input addonBefore={<Icon type="mail" />} type="Email" placeholder="请输入您的邮箱" />)}
 				</FormItem>
 
 				<FormItem hasFeedback>
-					{getFieldDecorator('password', {
-						rules: [{ required: true, message: '请输入您的密码!' }],
-					})(
-						<Input
-							addonBefore={<Icon type="lock" />}
-							type="password"
-							placeholder="请输入您的密码"
-						/>
-						)}
+					{getFieldDecorator('userName', { rules: [{ required: true, message: '请输入您的用户名!' }] })
+						(<Input addonBefore={<Icon type="user" />} placeholder="请输入您的用户名" />)}
 				</FormItem>
+
+				<FormItem hasFeedback>
+					{getFieldDecorator('password', { rules: [{ required: true, message: '请输入您的密码!' }], })
+						(<Input addonBefore={<Icon type="lock" />} type="password" placeholder="请输入您的密码" />)}
+				</FormItem>
+
 				<FormItem wrapperCol={{ span: 5, offset: 0 }}>
-					<Button type="primary" htmlType="submit" style={{ width: '336px', backgroundColor: 'white', color: '#169bd5' }}>
+					<Button type="primary" htmlType="submit"
+						style={{ width: '336px', backgroundColor: 'white', color: '#169bd5' }}>
 						注册
           </Button>
 				</FormItem>
@@ -129,33 +96,63 @@ const RegisterForm = Form.create()(React.createClass({
 		)
 	}
 }))
+//-----------------------------------------------------------------------------------------------
+
 
 class Login extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			login: 'loginFont',
+			register: 'loginFontAfter'
+		}
+	}
+
+	chooseLogin = () => {
+		if (this.state.login == 'loginFontAfter') {
+			this.setState({ login: 'loginFont', register: 'loginFontAfter' })
+		}
+	}
+
+	chooseRegister = () => {
+		if (this.state.register == 'loginFontAfter') {
+			this.setState({ login: 'loginFontAfter', register: 'loginFont' })
+		}
+	}
+
 	render() {
 		return (
 			<div>
-				<div className="box" style={{ paddingTop: '80px' }}>
-					<div className="loginleft"><img src={require("../image/1.jpeg")} /></div>
-					<div className="loginright">
-						<div className="loginlogo"><img src={require("../image/8.jpeg")} /></div>
-						<div className="loginrightform">
+				<div className="box" >
 
+					<div style={{
+						backgroundImage: `url(${require("../image/boy.jpeg")})`, backgroundSize: 'cover',
+						backgroundPosition: 'center center', width: '680px', height: '730px', float: 'left'
+					}}>
+					</div>
 
+					<div style={{ width: '520px', height: '430px', float: 'left', }}>
 
-							<TabsUnderline>
+						<Row style={{ marginTop: '50px', height: '60px' }}>
+							<Col span={6}>
+							</Col>
 
-								<div name="登录">
-									<div style={{ weight: '327px', height: '24px' }}></div>
-									<LoginForm />
-								</div>
+							<Col span={3} style={{}}>
+								<p className={this.state.login} onClick={() => this.chooseLogin()}>登录</p>
+							</Col>
 
+							<Col span={4}></Col>
 
-								<div name="注册">
-									<div style={{ weight: '327px', height: '24px' }}></div>
-									<RegisterForm />
-								</div>
+							<Col span={3}>
+								<p className={this.state.register} onClick={() => this.chooseRegister()}>注册</p>
+							</Col>
 
-							</TabsUnderline>
+							<Col span={6}>
+							</Col>
+						</Row>
+
+						<div style={{ width: '340px', height: '300px', margin: 'auto', }}>
+							{this.state.login == 'loginFont' ? <LoginForm /> : <RegisterForm />}
 						</div>
 					</div>
 				</div>
