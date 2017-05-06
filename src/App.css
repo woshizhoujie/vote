@@ -11,15 +11,7 @@ padding: 0;
 }
 
 /*头部*/
-.headerbox {
-    height: 50px;
-    background:dimgrey;
-}
 
-.headerlogo{
-    width: 250px;
-    height: 50px;
-} 
 
 .headertitle{
   line-height: 50px;

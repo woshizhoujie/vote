@@ -20,6 +20,7 @@ class Home extends Component {
 				<div style={{
 					backgroundImage: `url(${require("../image/green1.jpg")})`, backgroundSize: 'cover',
 					backgroundPosition: 'center center', height: '500px',
+					// width: '1000px', margin: 'auto'
 				}}>
 					<Row style={{ width: ' 1200px', margin: 'auto' }}>
 						<Col span={10} >
@@ -42,28 +43,31 @@ class Home extends Component {
 						<Col span={5}></Col>
 
 						<Col span={9}>
+
 							<div style={{ marginTop: '100px', width: ' 400px', height: '350px', float: 'left', }}>
-								<Search
+								{	/*	<Search
 									placeholder="请输入问卷名关键词"
 									style={{ width: 300 }}
 									onSearch={value => console.log(value)}
-								/>
+								/>*/}
+								<p style={{ fontSize: 30, color: 'aliceblue' }}>狗日的毕业设计</p>
 							</div>
 						</Col>
 					</Row>
 				</div>
 
-				<div style={{ width: '1200px', margin: 'auto', minHeight: '730px', }}>
 
-					<div style={{
-						width: '1100px', height: '30px', margin: 'auto', marginTop: '20px',
-						borderBottom: '1px solid #ccc',
-					}}>
-						<p>热门问卷</p>
+
+
+				<div style={{ width: '1200px', margin: 'auto', minHeight: '730px' }}>
+					<div style={{ marginTop: '50px', marginLeft: '50px' }}>
+						<Search
+							placeholder="请输入问卷名关键词"
+							style={{ width: 300 }}
+							onSearch={value => console.log(value)}
+						/>
 					</div>
-
 					<QuestionList />
-			
 				</div>
 			</div>
 

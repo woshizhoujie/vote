@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import { Tabs, Row, Col, Button, Icon } from 'antd';
+import { Tabs, Row, Col, Button, Icon, Pagination } from 'antd';
 
 import QuestionList from '../components/QuestionList'
 import { QuestionListCategory } from '../data/MockDate'
 
 class DetailView extends Component {
+	onChange = (pageNumber) => {
+		console.log('Page: ', pageNumber);
+	}
+
 	render() {
 		return (
 			<div>
@@ -43,7 +47,7 @@ class DetailView extends Component {
 												</Col>
 												<Col span={1}></Col>
 												<Col span={19}>
-													<p style={{ fontSize: '15px',}}>{e.des}</p>
+													<p style={{ fontSize: '15px', }}>{e.des}</p>
 												</Col>
 
 											</Row>
@@ -60,10 +64,10 @@ class DetailView extends Component {
 
 												<Col span={1}></Col>
 
-												<Col span={3}><br /><p>发布于:&nbsp;{e.time}</p></Col>
+												<Col span={4}><br /><p>发布于:&nbsp;{e.time}</p></Col>
 
 												<Col span={2}>	<br />	<div><Icon type="edit" />&nbsp;&nbsp;34</div></Col>
-												<Col span={2}>	<br />	<div><Icon type="like" />&nbsp;&nbsp;34</div></Col>
+												{/*	<Col span={2}>	<br />	<div><Icon type="like" />&nbsp;&nbsp;34</div></Col>*/}
 												<Col span={2}>	<br />	<div><Icon type="eye" />&nbsp;&nbsp;34</div></Col>
 											</Row>
 
@@ -77,6 +81,10 @@ class DetailView extends Component {
 						)
 					})
 				}
+
+				<div style={{ width: '520px', margin: 'auto', marginTop: '80px', marginBottom: '50px', }}>
+					<Pagination showQuickJumper defaultCurrent={2} total={500} onChange={this.onChange} />
+				</div>
 			</div>
 		)
 	}
