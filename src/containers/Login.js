@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+
 import { TabsUnderline } from '../components/Table'
-import { Link } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 import { Form, Icon, Input, Button, Checkbox, Row, Col } from 'antd'
+
+import { appInfo, appService } from '../service'
 
 const FormItem = Form.Item;
 
@@ -13,8 +16,24 @@ const LoginForm = Form.create()(React.createClass({
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
-				console.log('Received values of form: ', values);
+				console.log('登录提交的信息: ', values);
+
+				let body = JSON.stringify({
+					username: values.email,
+					password: values.password
+				})
+
+				appService.request(appInfo.address.login, body, false, 'POST')
+					.then(response => {
+						appInfo.app.accessToken = response.token
+						browserHistory.push('/')
+						alert('登录成功！')
+					})
+					.catch(err => {
+						alert('login error')
+					})
 			}
+
 		});
 	},
 
@@ -40,12 +59,10 @@ const LoginForm = Form.create()(React.createClass({
 				</FormItem>
 
 				<FormItem wrapperCol={{ span: 5, offset: 0 }}>
-					<Link to={'/PersonCenter'}>
-						<Button type="primary" htmlType="submit"
-							style={{ width: '336px', backgroundColor: 'white', color: '#169bd5', marginBottom: '48px' }}>
-							登录
+					<Button type="primary" htmlType="submit"
+						style={{ width: '336px', backgroundColor: 'white', color: '#169bd5', marginBottom: '48px' }}>
+						登录
             </Button>
-					</Link>
 				</FormItem>
 
 			</Form>
@@ -62,6 +79,24 @@ const RegisterForm = Form.create()(React.createClass({
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
 				console.log('Received values of form: ', values);
+
+				let body = JSON.stringify({
+					nickname: values.userName,
+					email: values.email,
+					password: values.password
+				})
+
+				console.log('注册的stringify%o', body)
+
+				appService.request(appInfo.address.register, body, false, 'POST')
+					.then(response => {
+						console.log('注册提交的信息: %o', response)
+						browserHistory.push('/login')
+						alert('注册成功！')
+					})
+					.catch(err => {
+						alert('register error')
+					})
 			}
 		});
 	},

@@ -1,16 +1,18 @@
-import { address, language, app, storage, UKCities } from './Information'
+import { address, app, storage } from './Information'
 import { request } from './WebService'
-
+import { loginAlert } from './utils.js'
 var appService = {
-  request,
+	request,
 }
 
 var appInfo = {
-  address,
-  language,
-  app,
-  storage,
-  UKCities,
+	address,
+	app,
+	storage,
 }
 
-export { appService, appInfo}
+var utils = {
+	loginAlert,
+}
+
+export { appService, appInfo, utils }

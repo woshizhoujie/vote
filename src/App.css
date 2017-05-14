@@ -27,18 +27,32 @@ padding: 0;
     font-size: 18px;
     
 }
-.nav{
+/*.nav{
     width: 120px;
     height: 50px;
     float: left;
     color: lightgrey;
+}*/
+
+.nav{
+		width: 120px;
+		height: 50px;
+		color: lightgrey;
+		line-height: 50px;
+		text-align: center;
+		font-size: 18px;
+		margin-right: 60px;
 }
-.headersign{
+
+.nav:hover{
+		color: darkolivegreen;
+}
+/*.headersign{
     text-decoration: none;
     line-height: 50px;
     font-size: 16px;
     color: lightgrey;
-}
+}*/
 /*尾部*/
 .footer{
   height: 100px;
