@@ -49,8 +49,8 @@ class Home extends Component {
 									placeholder="请输入问卷名关键词"
 									style={{ width: 300 }}
 									onSearch={value => console.log(value)}
-								/>*/}
-								<p style={{ fontSize: 30, color: 'aliceblue' }}>狗日的毕业设计</p>
+								/>
+								<p style={{ fontSize: 30, color: 'aliceblue' }}>狗日的毕业设计</p>*/}
 							</div>
 						</Col>
 					</Row>

@@ -14,16 +14,15 @@ class NewPerson extends Component {
 
 					<TabPane tab="用户注册" key="1">
 						<div style={{
-							backgroundImage: `url(${require("../image/green1.jpg")})`, backgroundSize: 'cover',
-							backgroundPosition: 'center center', height: '400px', marginLeft: '50px'
+							backgroundImage: `url(${require("../image/register.png")})`, height: '400px', marginLeft: '50px', backgroundSize: 'cover',
 						}}>
 						</div>
 					</TabPane>
 
 					<TabPane tab="用户登录" key="2">
 						<div style={{
-							backgroundImage: `url(${require("../image/green2.jpg")})`, backgroundSize: 'cover',
-							backgroundPosition: 'center center', height: '400px', marginLeft: '50px'
+							backgroundImage: `url(${require("../image/login.png")})`, backgroundSize: 'cover',
+							height: '400px', marginLeft: '50px'
 						}}>
 						</div>
 					</TabPane>
@@ -38,24 +37,21 @@ class NewPerson extends Component {
 
 					<TabPane tab="填写问卷" key="4">
 						<div style={{
-							backgroundImage: `url(${require("../image/green4.jpg")})`, backgroundSize: 'cover',
-							backgroundPosition: 'center center', height: '400px', marginLeft: '50px'
+							backgroundImage: `url(${require("../image/write.png")})`, height: '400px', marginLeft: '50px', backgroundSize: 'cover',
 						}}>
 						</div>
 					</TabPane>
 
 					<TabPane tab="搜索问卷" key="5">
 						<div style={{
-							backgroundImage: `url(${require("../image/green5.jpg")})`, backgroundSize: 'cover',
-							backgroundPosition: 'center center', height: '400px', marginLeft: '50px'
+							backgroundImage: `url(${require("../image/search.png")})`, height: '400px', marginLeft: '50px', backgroundSize: 'cover',
 						}}>
 						</div>
 					</TabPane>
 
 					<TabPane tab="查看问卷" key="6">
 						<div style={{
-							backgroundImage: `url(${require("../image/green6.jpg")})`, backgroundSize: 'cover',
-							backgroundPosition: 'center center', height: '400px', marginLeft: '50px'
+							backgroundImage: `url(${require("../image/see.png")})`, height: '400px', marginLeft: '50px', backgroundSize: 'cover',
 						}}>
 						</div>
 					</TabPane>
