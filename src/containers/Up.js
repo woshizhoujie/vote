@@ -218,10 +218,7 @@ class Up extends Component {
 							width='450px'
 							style={{ top: '300px' }}
 						>
-
 							<p>上传成功！</p>
-
-
 						</Modal>
 
 

@@ -3,10 +3,18 @@ import React, { Component } from 'react'
 import { TabsUnderline } from '../components/Table'
 import { Link, browserHistory } from 'react-router'
 import { Form, Icon, Input, Button, Checkbox, Row, Col } from 'antd'
+import AlertContainer from 'react-alert'
 
 import { appInfo, appService } from '../service'
 
 const FormItem = Form.Item;
+alertOptions = {
+    offset: 14,
+    position: 'bottom left',
+    theme: 'dark',
+    time: 5000,
+    transition: 'scale'
+  }
 
 
 //登录--------------------------------------------------------------------------------
@@ -27,13 +35,13 @@ const LoginForm = Form.create()(React.createClass({
 					.then(response => {
 						appInfo.app.accessToken = response.token
 						browserHistory.push('/')
-						alert('登录成功！')
+
 					})
 					.catch(err => {
-						alert('login error')
+						console.log('login error', err)
+						alert('登录失败')
 					})
 			}
-
 		});
 	},
 
@@ -78,11 +86,11 @@ const RegisterForm = Form.create()(React.createClass({
 		e.preventDefault();
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
-				console.log('Received values of form: ', values);
+				console.log('注册信息为: ', values);
 
 				let body = JSON.stringify({
 					nickname: values.userName,
-					email: values.email,
+					username: values.email,
 					password: values.password
 				})
 
@@ -92,10 +100,10 @@ const RegisterForm = Form.create()(React.createClass({
 					.then(response => {
 						console.log('注册提交的信息: %o', response)
 						browserHistory.push('/login')
-						alert('注册成功！')
+						alert('注册成功！请去登陆')
 					})
 					.catch(err => {
-						alert('register error')
+						alert('已注册')
 					})
 			}
 		});
