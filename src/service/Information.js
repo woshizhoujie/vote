@@ -10,7 +10,10 @@ const address = {
 	//登录
 	login: `${serviceDomain}/users/login/`,
 	//注册
-	register: `${serviceDomain}/users/register/`
+	register: `${serviceDomain}/users/register/`,
+
+	//问卷 /papers/
+	papers: `${serviceDomain}/papers/`,
 }
 
 const storage = {

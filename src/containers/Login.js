@@ -8,7 +8,7 @@ import AlertContainer from 'react-alert'
 import { appInfo, appService } from '../service'
 
 const FormItem = Form.Item;
-alertOptions = {
+let alertOptions = {
     offset: 14,
     position: 'bottom left',
     theme: 'dark',

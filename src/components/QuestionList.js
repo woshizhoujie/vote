@@ -11,19 +11,24 @@ class QuestionList extends Component {
 	}
 
 	render() {
+		let list = this.props.list
+		console.log('传给组件的问卷列表%o', this.props.list)
+		const { cover, description, id, owner, publish, questions, title, watch } = this.props.list
 		return (
 			<div style={{}}>
 				<div style={{ width: '1200px', minHeight: '750px', margin: 'auto', marginTop: '10px' }}>
 					{
-						QuestionListCategory.map((e, i) => {
+						list.map((item, index) => {
+							const { cover, description, id, owner, publish, questions, title, watch } = item
 							return (
 								<div className="queimg" >
-									<Link to={`/Detail/${e.id}`} >
+									<Link to={`/Detail/${item.id}`} >
 										<div style={{
 											width: '234px',
 											height: '250px',
 											borderRadius: '5px',
-											backgroundImage: 'url(' + e.img + ')',
+											backgroundImage: 'url(' + cover + ')',
+											backgroundColor: 'rgba(0,0,0,0.3)',
 											backgroundSize: 'cover', backgroundPosition: 'center,center',
 											cursor: 'pointer',
 										}}
@@ -37,7 +42,7 @@ class QuestionList extends Component {
 												<br />
 												<br />
 												<br />
-												<p style={{ textAlign: 'center', fontSize: '20', fontWeight: 'blod', color: 'white' }}>{e.des}</p>
+												<p style={{ textAlign: 'center', fontSize: '15', fontWeight: 'blod', color: 'white' }}>{description}</p>
 											</div>
 
 										</div>
@@ -62,13 +67,13 @@ class QuestionList extends Component {
 
 										{/*用户头像*/}
 										<Col span={5}>
-											<img src={e.img} style={{ width: '30px', height: '32px', borderRadius: '2px' }} />
+											<img src={cover} style={{ width: '30px', height: '32px', borderRadius: '2px' }} />
 										</Col>
 
 										{/*用户名，问卷名*/}
 										<Col span={17}>
-											<p style={{ fontSize: '12', fontWeight: 'blod', color: 'grey' }}>{e.author}</p>
-											<p>{e.name}</p>
+											{/*<p style={{ fontSize: '12', fontWeight: 'blod', color: 'grey' }}>{owner}</p>*/}
+											<p>{title}</p>
 										</Col>
 									</Row>
 								</div>
