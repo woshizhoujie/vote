@@ -79,11 +79,9 @@ class PersonCenter extends Component {
 						<TabsUnderline name="personalCenter" center={true}  >
 
 							<div name="我的发布">
-								<QuestionList />
 							</div>
 
 							<div name="我参与的">
-								<QuestionList />
 							</div>
 
 							<div name="编辑个人资料" style={{ width: "1200px", height: "808px" }}>

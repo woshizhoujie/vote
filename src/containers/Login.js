@@ -34,8 +34,7 @@ const LoginForm = Form.create()(React.createClass({
 				appService.request(appInfo.address.login, body, false, 'POST')
 					.then(response => {
 						appInfo.app.accessToken = response.token
-						browserHistory.push('/')
-
+						browserHistory.push('/PersonCenter')
 					})
 					.catch(err => {
 						console.log('login error', err)

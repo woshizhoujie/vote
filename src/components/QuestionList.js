@@ -13,7 +13,6 @@ class QuestionList extends Component {
 	render() {
 		let list = this.props.list
 		console.log('传给组件的问卷列表%o', this.props.list)
-		const { cover, description, id, owner, publish, questions, title, watch } = this.props.list
 		return (
 			<div style={{}}>
 				<div style={{ width: '1200px', minHeight: '750px', margin: 'auto', marginTop: '10px' }}>
@@ -50,10 +49,10 @@ class QuestionList extends Component {
 									</Link>
 									<Row style={{ margin: '5px' }}>
 										<Col span={2}></Col>
-										{/*填问卷数量，点赞数量*/}
-										<Col span={5}><div><Icon type="edit" />&nbsp;&nbsp;34</div></Col>
+										{/*填问卷数量，查阅数量*/}
+										<Col span={5}><div><Icon type="edit" />&nbsp;&nbsp;{watch}</div></Col>
 
-										<Col span={5}><div><Icon type="eye" />&nbsp;&nbsp;34</div></Col>
+										<Col span={5}><div><Icon type="eye" />&nbsp;&nbsp;{watch}</div></Col>
 									</Row>
 
 

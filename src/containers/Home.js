@@ -53,7 +53,8 @@ class Home extends Component {
 												return (
 													<div>
 														<img src={item.url} style={{ width: '650px', height: '430px', borderRadius: '5' }} />
-													</div>)
+													</div>
+												)
 											})
 										}
 									</Carousel>
