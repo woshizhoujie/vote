@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 
 import { Icon, Row, Col, Pagination } from 'antd'
 
@@ -21,7 +21,16 @@ class QuestionList extends Component {
 							const { cover, description, id, owner, publish, questions, title, watch } = item
 							return (
 								<div className="queimg" >
-									<Link to={`/Detail/${item.id}`} >
+									{	/*<Link to={`/Detail/${item.id}`} >	</Link>*/}
+
+									<span style={{ color: 'blue', cursor: 'pointer' }} onClick={() => {
+										browserHistory.push({
+											pathname: '/Detail/${item.id}',
+											state: item,
+										})
+										// console.log('路由传递的值%o', value)
+									}}>
+
 										<div style={{
 											width: '234px',
 											height: '250px',
@@ -45,8 +54,8 @@ class QuestionList extends Component {
 											</div>
 
 										</div>
+									</span>
 
-									</Link>
 									<Row style={{ margin: '5px' }}>
 										<Col span={2}></Col>
 										{/*填问卷数量，查阅数量*/}

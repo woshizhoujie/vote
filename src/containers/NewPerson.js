@@ -29,8 +29,7 @@ class NewPerson extends Component {
 
 					<TabPane tab="上传问卷" key="3">
 						<div style={{
-							backgroundImage: `url(${require("../image/green3.jpg")})`, backgroundSize: 'cover',
-							backgroundPosition: 'center center', height: '400px', marginLeft: '50px'
+							backgroundImage: `url(${require("../image/up.png")})`, backgroundSize: 'cover', height: '400px', marginLeft: '50px'
 						}}>
 						</div>
 					</TabPane>
